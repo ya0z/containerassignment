@@ -14,8 +14,10 @@ text = [
 
 @app.route('/')
 def index():
-    i = random.randint(0,4)
-    result = text[i]
+    #i = random.randint(0,4)
+    #result = text[i]
+    # random.choice() will pick from the list with equal probability
+    result = random.choice(text)
     return flask.render_template('index.html', result=result['text'])
 
 #Creating an API, but do not need to use it
